@@ -1,0 +1,41 @@
+<html>
+  <head>
+   
+    <title>ToDo App</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet"/>
+    <link href="/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div class="container">
+      <h1><img src="https://img.icons8.com/color/48/000000/add-book.png"/>
+         ToDo List App
+        <img src="https://img.icons8.com/color/48/000000/check-book.png"/></h2>
+   <div class="row">
+      <form action="/addtask" method="POST">
+        <input type="text" name="newtask" placeholder="add new task" />
+        <button>ADD TASK</button>
+    </div>
+        <h2> <img src="https://img.icons8.com/nolan/64/add-list.png"/>Task List</h2>
+<div class="row">
+        <% for( var i = 0; i < task.length; i++){ %>
+        <li>
+          <input type="checkbox" name="check" value="<%= task[i] %>" /> <%=
+          task[i] %>
+        </li>
+        <% } %>
+    </div>
+
+        <button formaction="/removetask" type="submit" id="top">Remove</button>
+      </form>
+
+      <h2><img src="https://img.icons8.com/bubbles/50/000000/checked-2.png"/>Completed tasks</h2>
+<div class="row">
+      <% for(var i = 0; i < complete.length; i++){ %>
+      <ul><img src="https://img.icons8.com/color/20/000000/double-tick.png"/> <%= complete[i] %></ul>
+      <% } %>
+    </div>
+</div>
+  </body>
+</html>
